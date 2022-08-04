@@ -27,20 +27,30 @@ for tr in table_rows:
 
 
 
-Star_names = []
-Distance =[]
+Brown_dwarf = []
+Constellation =[]
+Right_ascension = []
+Declination =[]
+App_mag = []
+Distance = []
+Spectral_type = []
 Mass = []
-Radius =[]
-Lum = []
+Radius = []
+Discovery_year = []
 
 for i in range(1,len(temp_list)):
-    Star_names.append(temp_list[i][1])
-    Distance.append(temp_list[i][3])
-    Mass.append(temp_list[i][5])
-    Radius.append(temp_list[i][6])
-    Lum.append(temp_list[i][7])
+    Brown_dwarf.append(temp_list[i[1]])
+    Constellation.append(temp_list[i[2]])
+    Right_ascension.append(temp_list[i[3]])
+    Declination.append(temp_list[i[4]])
+    App_mag.append(temp_list[i[5]])
+    Distance.append(temp_list[i[6]])
+    Spectral_type.append(temp_list[i[7]])
+    Mass.append(temp_list[i[8]])
+    Radius.append(temp_list[i[9]])
+    Discovery_year.append(temp_list[i[10]])
     
-df2 = pd.DataFrame(list(zip(Star_names,Distance,Mass,Radius,Lum)),columns=['Star_name','Distance','Mass','Radius','Luminosity'])
+df2 = pd.DataFrame(list(zip(Brown_dwarf, Constellation, Right_ascension, Declination, App_mag, Distance, Spectral_type, Mass, Radius, Discovery_year)),columns=['Brown_dwarf', 'Constellation' 'Right_ascension', 'Declination', 'App_mag', 'Distance', 'Spectral_type', 'Mass', 'Radius', 'Discovery_year'])
 print(df2)
 
 df2.to_csv('brown_dwarfs.csv')
